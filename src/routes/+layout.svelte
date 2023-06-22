@@ -17,7 +17,6 @@
 	import faviPng from '../assets/favi/favicon.png?png&imagetools';
 	import faviSvg from '../assets/favi/favicon.svg?url';
 	import '../app.pcss';
-	import { fullscreenMenuActive } from '../lib/menu/FullscreenMenu.svelte';
 	import Nav from '../lib/nav/Nav.svelte';
 	import { Svg } from '@sxxov/sv/svg';
 	import { Button, ButtonVariants } from '@sxxov/sv/button';
@@ -25,7 +24,7 @@
 	import ic_cg_text from '../assets/brand/logo/cg/text.svg?raw';
 	import ic_cged_text from '../assets/brand/logo/cged/text.svg?raw';
 
-	let unscrollable = false;
+	let navActive = false;
 	let main: HTMLElement | undefined;
 	let contentDiv: HTMLDivElement | undefined;
 	let lenis: Lenis | undefined;
@@ -33,15 +32,9 @@
 	const pageIdToScrollY = new Map<string, number>();
 
 	$: if (lenis && window.matchMedia('(pointer: fine)').matches)
-		unscrollable ? lenis.stop() : lenis.start();
+		navActive ? lenis.stop() : lenis.start();
 
 	beforeNavigate((nav) => {
-		if (nav.type === 'popstate' && $fullscreenMenuActive) {
-			$fullscreenMenuActive = false;
-			nav.cancel();
-			return;
-		}
-
 		const { id: fromId } = nav.from?.route ?? {};
 		const fromScrollY = Number(lenis?.scroll);
 		if (fromId) pageIdToScrollY.set(fromId, fromScrollY);
@@ -168,7 +161,7 @@
 		class="content"
 		bind:this={contentDiv}
 	>
-		<Nav bind:active={unscrollable} />
+		<Nav bind:active={navActive} />
 		<slot />
 		<footer>
 			<!-- <Logo hasBackNav={false} /> -->
@@ -194,7 +187,9 @@
 				<a href="/about-us">About Us</a><br />
 				<a href="/contact-us">Contact Us</a><br />
 				<a href="/faq">FAQ</a><br />
-				<a href="/shipping.html">Shipping & Return Policies</a>
+				<a href="http://localhost/shipping.html"
+					>Shipping & Return Policies</a
+				>
 			</p>
 			<div class="bottom">
 				<Button

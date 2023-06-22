@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { beforeNavigate } from '$app/navigation';
 	import Lenis from '@studio-freight/lenis';
 	import { Composition, Tween } from '@sxxov/sv/animation';
 	import { Button, ButtonVariants } from '@sxxov/sv/button';
@@ -20,15 +21,12 @@
 		ic_volunteer_activism,
 	} from 'maic/two_tone';
 	import { onMount } from 'svelte';
-	import ic_cg_symbol from '../../assets/brand/logo/cg/symbol.svg';
-	import ic_cged_symbol from '../../assets/brand/logo/cged/symbol.svg';
 	import img_misc_1 from '../../assets/img/misc/1284615.jpg';
 	import img_misc_2 from '../../assets/img/misc/1284616.jpg';
 	import img_misc_3 from '../../assets/img/misc/1284617.jpg';
 	import CatelogueSelector from './CatalogueSelector.svelte';
-	import Search from './Search.svelte';
-	import { page } from '$app/stores';
 	import Logo from './Logo.svelte';
+	import Search from './Search.svelte';
 
 	const enum Breakpoints {
 		CATALOGUE = 1080,
@@ -67,17 +65,29 @@
 		},
 	];
 
+	beforeNavigate((nav) => {
+		console.log(nav);
+		if (nav.type === 'popstate' && active) {
+			active = false;
+			nav.cancel();
+		}
+	});
+
 	const setActive = (v: boolean) => (active = v);
 	const setStuffActive = (v: boolean) => (stuffActive = v);
 	const setCartActive = (v: boolean) => (cartActive = v);
 	const setAccountActive = (v: boolean) => (accountActive = v);
 	$: setActive(stuffActive || cartActive || accountActive);
+	$: !active &&
+		(setStuffActive(false), setCartActive(false), setAccountActive(false));
 	$: if (stuffActive) {
 		if (widthBar < Breakpoints.MENU) {
 			setCartActive(false);
 			setAccountActive(false);
 		}
 	}
+
+	$: console.log(active);
 
 	$: if (cartActive) {
 		if (widthBar < Breakpoints.MENU) setStuffActive(false);
@@ -495,12 +505,18 @@
 	class:active={stuffActive}
 	bind:this={menuDiv}
 >
-	{#if widthBar <= Breakpoints.LOGO}
-		<Logo />
-	{/if}
-	{#if widthBar <= Breakpoints.CATALOGUE}
-		<CatelogueSelector width="min-content" />
-	{/if}
+	<div class="choices">
+		<div class="logo">
+			{#if widthBar <= Breakpoints.LOGO}
+				<Logo />
+			{/if}
+		</div>
+		<div class="catalogue">
+			{#if widthBar <= Breakpoints.CATALOGUE}
+				<CatelogueSelector width="min-content" />
+			{/if}
+		</div>
+	</div>
 	<div class="section">
 		<h4>Best Sellers</h4>
 		<p>
@@ -808,6 +824,17 @@
 			left: 0;
 			&:not(.active) {
 				transform: translateX(-100%);
+			}
+
+			& > .choices {
+				display: flex;
+				flex-direction: column;
+				gap: 28px;
+
+				.logo {
+					padding-left: 21px;
+					padding-top: 56px;
+				}
 			}
 
 			& > .section {
