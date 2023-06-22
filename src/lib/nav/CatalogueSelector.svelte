@@ -86,7 +86,9 @@
 >
 	{#each Object.entries(Catalogues) as [k, { name, icon }]}
 		{@const isSelected = k === $catalogue}
-		<a href="?catalogue={k}">
+		{@const url = new URL($page.url)}
+		{(url.searchParams.set('catalogue', k), '')}
+		<a href={url.search}>
 			<Button
 				width="max-content"
 				roundness={28}
