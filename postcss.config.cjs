@@ -15,9 +15,9 @@ const production = mode !== 'development';
 module.exports = {
 	/** @type {import('postcss').Plugin[]} */
 	plugins: [
-		// postcssImportUrl({
-		// 	modernBrowser: true,
-		// }),
+		postcssImportUrl({
+			modernBrowser: true,
+		}),
 		postcssMixins({
 			mixinsDir: join(__dirname, 'src/theme/'),
 		}),
