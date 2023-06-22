@@ -4,11 +4,14 @@ import db_kids from '../../../../assets/db/kids.json';
 import { clamp } from '@sxxov/ut/math';
 import { json } from '@sveltejs/kit';
 
+const imgs = import.meta.glob('../../../../assets/img/items/*.webp');
+const imgPathAndLoaders = Object.entries(imgs);
+
 export interface IItem {
+	img: () => Promise<unknown>;
 	id: string;
 	title: string;
 	price: number;
-	src: string;
 	tags: readonly string[];
 	colours: readonly `#${string}`[];
 }
@@ -22,7 +25,15 @@ const dbItemToItem = (
 	({
 		id: item.id,
 		title: item.title,
-		src: `/storage/items/${item.src}`,
+		img:
+			imgPathAndLoaders.find(([path]) =>
+				path.endsWith(`/${item.src}`),
+			)?.[1] ??
+			(async () => {
+				console.error(`No image loader was found for item: ${item.id}`);
+
+				return '';
+			}),
 		price: item.price,
 		tags: item.tags,
 		colours:
@@ -70,6 +81,15 @@ export const GET = async ({ url }) => {
 
 	return json({
 		count: found.length,
-		items: found.slice(offset, offset + limit),
+		items: await Promise.all(
+			found.slice(offset, offset + limit).map(async (item) => ({
+				id: item.id,
+				title: item.title,
+				src: String(((await item.img()) as any).default),
+				price: item.price,
+				tags: item.tags,
+				colours: item.colours,
+			})),
+		),
 	});
 };
