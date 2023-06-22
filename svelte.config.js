@@ -14,7 +14,9 @@ export default {
 		dev: !production,
 	},
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			runtime: 'edge',
+		}),
 		files: {
 			appTemplate: 'src/app.html',
 		},
