@@ -3,7 +3,7 @@
 	context="module"
 >
 	export const enum Particulars {
-		NAME = "Jia's",
+		NAME = 'Cloething',
 		DESCRIPTION = '',
 		KEYWORDS = '',
 		AUTHOR = '',

@@ -19,8 +19,10 @@
 	import img_crewmate_5 from '../assets/img/misc/1284615.jpg';
 	import img_child from '../assets/img/misc/edward-cisneros-r_Tnjj6TB30-unsplash.jpg';
 	import Marquee from '../lib/marquee/Marquee.svelte';
+	import { TitleOfPage } from '@sxxov/sv/misc';
 </script>
 
+<TitleOfPage title="Home — Cloething" />
 <div class="home">
 	<div class="spring">
 		<div class="banner">

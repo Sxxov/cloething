@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { TitleOfPage } from '@sxxov/sv/misc';
 </script>
 
+<TitleOfPage title="{$page.status} — Cloething" />
 <div class="component">
 	<div class="content">
 		<h1>{$page.status}</h1>

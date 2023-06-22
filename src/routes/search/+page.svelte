@@ -8,6 +8,7 @@
 	import { expoInOut } from 'svelte/easing';
 	import { whenIntersect } from '../../lib/actions/whenIntersect';
 	import { catalogue } from '../../lib/nav/CatalogueSelector.svelte';
+	import { TitleOfPage } from '@sxxov/sv/misc';
 
 	export let data;
 
@@ -64,11 +65,14 @@
 
 	$: query = $page.url.searchParams.get('query') ?? '';
 	$: tags = $page.url.searchParams.getAll('tag');
+
+	$: heading = query ? `“${query}”` : 'All Items';
 </script>
 
+<TitleOfPage title="{heading} — Cloething" />
 <div class="component">
 	<div class="heading">
-		<h4>{query ? `“${query}”` : 'All Items'}</h4>
+		<h4>{heading}</h4>
 		<p>
 			{data.count} items in {$catalogue[0]?.toUpperCase()}{$catalogue.slice(
 				1,
