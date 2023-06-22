@@ -102,3 +102,4 @@ build/
 static/_*/
 .netlify/
 .svelte-kit/
+.vercel/

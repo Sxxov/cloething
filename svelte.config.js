@@ -1,5 +1,5 @@
 import preprocess from 'svelte-preprocess';
-import netlify from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-vercel';
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -14,7 +14,7 @@ export default {
 		dev: !production,
 	},
 	kit: {
-		adapter: netlify(),
+		adapter: adapter(),
 		files: {
 			appTemplate: 'src/app.html',
 		},
