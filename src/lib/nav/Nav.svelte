@@ -66,7 +66,6 @@
 	];
 
 	beforeNavigate((nav) => {
-		console.log(nav);
 		if (nav.type === 'popstate' && active) {
 			active = false;
 			nav.cancel();
@@ -86,8 +85,6 @@
 			setAccountActive(false);
 		}
 	}
-
-	$: console.log(active);
 
 	$: if (cartActive) {
 		if (widthBar < Breakpoints.MENU) setStuffActive(false);
