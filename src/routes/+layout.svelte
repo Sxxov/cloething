@@ -23,6 +23,7 @@
 	import ic_whatsapp from '../assets/img/whatsapp.svg?raw';
 	import ic_cg_text from '../assets/brand/logo/cg/text.svg?raw';
 	import ic_cged_text from '../assets/brand/logo/cged/text.svg?raw';
+	import { ic_arrow_upward } from 'maic/two_tone';
 
 	let navActive = false;
 	let main: HTMLElement | undefined;
@@ -195,9 +196,11 @@
 				<Button
 					{...ButtonVariants.Secondary}
 					width="min(336px, calc(100vw - 56px))"
+					on:click={() =>
+						main?.scrollTo({ top: 0, behavior: 'smooth' })}
 					><svelte:fragment slot="left"
-						><Svg svg={ic_whatsapp} /></svelte:fragment
-					>Contact</Button
+						><Svg svg={ic_arrow_upward} /></svelte:fragment
+					>Back to top</Button
 				>
 			</div>
 		</footer>
