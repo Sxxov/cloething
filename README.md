@@ -1,9 +1,13 @@
-# Cloething
+# [Cloething](https://cloething.staging.ljs.lol/)
 
 A website for sustainable clothing.
 
 > **Note**
 > If you're Mr. Mohsen, give high marks 👍.
+
+## It's Live!
+
+[cloething.staging.ljs.lol](https://cloething.staging.ljs.lol/)
 
 ## Prerequisites
 
