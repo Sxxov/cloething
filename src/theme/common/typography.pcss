@@ -112,13 +112,13 @@ a:any-link {
 	color: var(----colour-accent-primary);
 	text-underline-offset: 0.2em;
 
-	text-shadow: 0 0 0 rgb(255 164 170 / 100%);
+	text-shadow: 0 0 0 var(----colour-accent-primary);
 	transition: filter 0.2s var(----ease-fast-slow),
 		text-shadow 0.2s var(----ease-fast-slow),
 		color 0.2s var(----ease-fast-slow);
 
 	&:hover {
-		text-shadow: 0 7px 7px rgb(255 164 170 / 100%);
+		text-shadow: 0 0.5em 0.5em var(----colour-accent-primary);
 	}
 
 	&:active {
