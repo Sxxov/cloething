@@ -1,14 +1,37 @@
 <script lang="ts">
+	/** A component that scrolls text in a straight line, like a marquee board. */
+
 	import { css, type TCss } from '@sxxov/ut/css';
 	import { onMount } from 'svelte';
 
+	/**
+	 * The duration of how long a piece of text will take to scroll from one end
+	 * of the component, to the other.
+	 */
 	export let duration: TCss = 20;
+	/**
+	 * The gap between each piece of text.
+	 *
+	 * This is used to determine how many pieces of text are required to fill
+	 * the component.
+	 */
 	export let gap: TCss = 10;
 
 	let itemWidth = 0;
 	let clientWidth = 0;
+
+	/**
+	 * Whether the component has been fully inserted into the DOM.
+	 *
+	 * This will stay `false` during SSR, since `onMount()` only runs on the
+	 * client.
+	 */
 	let hasMounted = false;
 
+	/**
+	 * Compute the number of items required to fill the component, every time
+	 * either the item width or the client width changes.
+	 */
 	$: itemCount = Math.ceil(clientWidth / itemWidth || 0) + 1;
 
 	onMount(() => {
@@ -17,7 +40,7 @@
 </script>
 
 <div
-	class="component"
+	class="marquee"
 	style="
 		--duration: {css(duration, 's')};
 		--gap: {css(gap)};
@@ -34,6 +57,12 @@
 		>
 			<slot />
 		</div>
+		<!--
+			Create an array with the length of `itemCount`, then fill it with nothing
+
+			This is a workaround to create an index loop, since Svelte doesn't support
+			loops in the template.
+		-->
 		{#each Array(itemCount).fill(undefined) as _}
 			<div
 				class="item"
@@ -46,9 +75,7 @@
 </div>
 
 <style lang="postcss">
-	.component {
-		/* display: inline-block; */
-
+	.marquee {
 		width: 100%;
 
 		overflow: hidden;

@@ -57,7 +57,24 @@ const items = [
 	...db_kids.map(dbItemToItem),
 ];
 
+/**
+ * The handler for the search request API endpoint. Handles GET requests only.
+ *
+ * @example
+ * 	await(
+ * 		await fetch(
+ * 			`/api/v1/search${new URLSearchParams({
+ * 				query: 'shirt',
+ * 				limit: 10,
+ * 				offset: 0,
+ * 			})}`,
+ * 		),
+ * 	).json();
+ */
 export const GET = async ({ url }) => {
+	// Get the parameters from the URL.
+	// TODO: Add proper validation for the query parameters
+	// 		 once database in implemented.
 	const query = url.searchParams.get('query') ?? '';
 	const limit = clamp(Number(url.searchParams.get('limit')) || 30, 0, 30);
 	const offset = clamp(
@@ -68,10 +85,14 @@ export const GET = async ({ url }) => {
 	const tags = url.searchParams.getAll('tag');
 	const catalogue = url.searchParams.get('catalogue') ?? '';
 
+	// Filter the items based on the query parameters.
 	const found = items.filter(
 		(item) =>
+			// If there are no tags, or the item has at least one of the tags.
 			(tags.length <= 0 || item.tags.some((tag) => tags.includes(tag))) &&
+			// If there is no catalogue, or the item is in the catalogue.
 			(!catalogue || item.tags.includes(catalogue)) &&
+			// If there is no query, or the item title or tags contain the query.
 			(!query ||
 				item.title.toLowerCase().includes(query.toLowerCase()) ||
 				item.tags.some((tag) =>
