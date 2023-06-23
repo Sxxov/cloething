@@ -344,10 +344,9 @@
 					font-size: max(16vw, 96px);
 					font-weight: 300;
 					line-height: 0.6;
-					color: var(----colour-text-primary);
-					text-shadow: 0 25px 16px var(----colour-text-primary),
-						0 39px 140px var(----colour-background-primary),
-						0 71px 30px var(----colour-text-primary);
+					font-smooth: always;
+					color: #fff;
+					text-shadow: 0 39px 140px #000;
 				}
 			}
 		}
@@ -449,11 +448,8 @@
 					font-size: max(10vw, 72px);
 					font-weight: 300;
 					line-height: 0.6;
-					/* margin-top: 0; */
 					color: var(----colour-background-primary);
-					text-shadow: 0 10px 16px var(----colour-background-primary),
-						0 39px 40px var(----colour-background-primary),
-						0 71px 46px var(----colour-text-primary);
+					text-shadow: 0 39px 140px #fff;
 				}
 			}
 		}
