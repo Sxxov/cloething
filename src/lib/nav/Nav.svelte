@@ -517,52 +517,52 @@
 	<div class="section">
 		<h4>Best Sellers</h4>
 		<p>
-			<a href="/best-sellers/featured">Featured</a><br />
-			<a href="/best-sellers/trending">Trending</a><br />
-			<a href="/best-sellers/all-time">All-time Best Sellers</a>
+			<a href="#">Featured</a><br />
+			<a href="#">Trending</a><br />
+			<a href="#">All-time Best Sellers</a>
 		</p>
 	</div>
 	<div class="section">
 		<h4>New Arrivals</h4>
 		<p>
-			<a href="/new-arrivals/?women">Women's New Arrivals</a><br />
-			<a href="/new-arrivals/?men">Men's New Arrivals</a><br />
-			<a href="/new-arrivals/?kids">Kids' New Arrivals</a>
+			<a href="#">Women's New Arrivals</a><br />
+			<a href="#">Men's New Arrivals</a><br />
+			<a href="#">Kids' New Arrivals</a>
 		</p>
 	</div>
 	<div class="section">
 		<h4>Collections</h4>
 		<p>
-			<a href="/collections/spring-2023">Spring Collection '23</a><br />
-			<a href="/collections/crewmate-2023">Crewmate Series</a><br />
-			<a href="/collections/impostor-2023">Impostor Collection</a><br />
-			<a href="/collections/something-2023">Something Edition</a>
+			<a href="#">Spring Collection '23</a><br />
+			<a href="#">Crewmate Series</a><br />
+			<a href="#">Impostor Collection</a><br />
+			<a href="#">Something Edition</a>
 		</p>
 	</div>
 	<div class="section">
 		<h4>Catelogues</h4>
 		<p>
-			<a href="/catelogue/?women">Womens</a><br />
-			<a href="/catelogue/?men">Mens</a><br />
-			<a href="/catelogue/?kids">Kids</a><br />
-			<a href="/catelogue/?unisex">Unisex</a>
+			<a href="#">Womens</a><br />
+			<a href="#">Mens</a><br />
+			<a href="#">Kids</a><br />
+			<a href="#">Unisex</a>
 		</p>
 	</div>
 	<div class="section">
 		<h4>Categories</h4>
 		<p>
-			<a href="/categories/shirts">Shirts</a><br />
-			<a href="/categories/t-shirts">T-Shirts</a><br />
-			<a href="/categories/trousers">Trousers</a><br />
-			<a href="/categories/dresses">Dresses</a><br />
-			<a href="/categories/accessories">Accessories</a><br />
-			<a href="/categories/shoes">Shoes</a><br />
-			<a href="/categories/formalwear">Formalwear</a>
+			<a href="#">Shirts</a><br />
+			<a href="#">T-Shirts</a><br />
+			<a href="#">Trousers</a><br />
+			<a href="#">Dresses</a><br />
+			<a href="#">Accessories</a><br />
+			<a href="#">Shoes</a><br />
+			<a href="#">Formalwear</a>
 		</p>
 	</div>
 	<Spacer height={28} />
 	<div class="cta">
-		<a href="/education"
+		<a href="#"
 			><Button {...ButtonVariants.Secondary}>
 				<svelte:fragment slot="left"
 					><Svg svg={ic_cruelty_free} /></svelte:fragment
@@ -571,7 +571,7 @@
 				>
 			</Button></a
 		>
-		<a href="/education/donate"
+		<a href="#"
 			><Button {...ButtonVariants.Secondary}>
 				<svelte:fragment slot="left"
 					><Svg svg={ic_volunteer_activism} /></svelte:fragment
@@ -633,7 +633,7 @@
 					.toFixed(2)}
 			</p>
 		</div>
-		<a href="/pay">
+		<a href="#">
 			<Button {...ButtonVariants.Primary}
 				><svelte:fragment slot="left"
 					><Svg svg={ic_shopping_cart_checkout} /></svelte:fragment
@@ -649,10 +649,10 @@
 	<div class="section">
 		<h4>Account</h4>
 		<p>
-			<a href="/account">My Account</a><br />
-			<a href="/account/orders">My Orders</a><br />
-			<a href="/account/settings">Settings</a><br />
-			<a href="/account/logout">Logout</a>
+			<a href="#">My Account</a><br />
+			<a href="#">My Orders</a><br />
+			<a href="#">Settings</a><br />
+			<a href="#">Logout</a>
 		</p>
 	</div>
 </div>

@@ -231,7 +231,7 @@
 		<div class="content">
 			<div class="heading"><h1>Cloething Education</h1></div>
 			<div class="cta">
-				<a href="/education">
+				<a href="#">
 					<Button
 						{...ButtonVariants.Primary}
 						width="100%"

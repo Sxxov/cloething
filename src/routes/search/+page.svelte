@@ -93,7 +93,7 @@
 		class:unmounted={!hasMounted}
 	>
 		{#each items as { src, id, title, colours, price, tags }, i (id)}
-			<a href="/item/{id}">
+			<a href="/Individual.html?id={id}">
 				<div
 					class="item"
 					style="

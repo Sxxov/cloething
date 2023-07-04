@@ -25,7 +25,7 @@
 		</Button></a
 	>
 	<p style="color: var(----colour-text-secondary)">/</p>
-	<a href="/education"
+	<a href="#"
 		><Button
 			{...ButtonVariants.Secondary}
 			colourBackground="----colour-background-primary"

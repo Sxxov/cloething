@@ -185,12 +185,10 @@
 			</div>
 			<p>
 				<a href="/">Home</a><br />
-				<a href="/about-us">About Us</a><br />
-				<a href="/contact-us">Contact Us</a><br />
-				<a href="/faq">FAQ</a><br />
-				<a href="http://localhost/shipping.html"
-					>Shipping & Return Policies</a
-				>
+				<a href="/about.html">About Us</a><br />
+				<a href="#">Contact Us</a><br />
+				<a href="#">FAQ</a><br />
+				<a href="/shipping.html">Shipping & Return Policies</a>
 			</p>
 			<div class="bottom">
 				<Button

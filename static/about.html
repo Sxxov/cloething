@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ABOUT US</title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<style type="text/css">
+			.aboutus{
+				font-family: 'Playfair Display';
+				font-size: 40px;
+				line-height: 80%;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				text-align: center;
+				padding-left: 70px;
+				letter-spacing: -0.03em;
+				color: #000;
+				float: left;
+				margin: 0px;
+			}
+
+			.mission{
+				font-family: raleway, sans-serif;
+				font-style: normal;
+				font-size: 15px;
+				line-height: 150%;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				text-align: center;
+				color: #000;
+				float: left;
+				padding-left: 100px;
+			}
+
+			.vision{
+				font-family: 'Playfair Display';
+				font-style: normal;
+				font-weight: 600;
+				font-size: 24px;
+				line-height: 100%;
+				letter-spacing: -0.03em;
+				color: #000;
+				text-align: left;
+				margin-left: 300px;
+			}
+
+			.visiontext{
+				font-family: raleway, sans-serif;
+				font-style: normal;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 150%;
+				color: #000;
+				margin-left: 300px;
+				margin-right: 300px;
+			    position: relative;
+			    display: flex;
+			    text-align: justify;
+			}
+
+			.timelinebox{
+			  width: 1200px;
+			  margin: auto;
+			}
+
+			.timeline{
+			  counter-reset: test 2019;
+			  position: relative;
+			  margin-top: 300px;
+			  margin-bottom: 300px;
+			  padding-bottom: 100px;
+			  display: flex;
+			  text-align: center;
+			  align-items: center;
+			  justify-content: center;
+			  font-family: raleway, sans-serif;
+			  font-size: 18px;
+			}
+
+			.timeline li{
+			  list-style: none;
+			  float: left;
+			  width: 33.3333%;
+			  position: relative;
+			  text-align: center;
+			}
+
+			.timeline li:before{
+			  counter-increment: test;
+			  content: counter(test);
+			  width: 130px;
+			  height: 130px;
+			  border: 1px solid #000;
+			  border-radius: 50%;
+			  display: block;
+			  text-align: center;
+			  line-height: 130px;
+			  margin: 0 auto 10px auto;
+			  background: #fff;
+			  
+			}
+
+			.timeline li:after{
+			  content: "";
+			  position: absolute;
+			  width: 190%;
+			  height: 1px;
+			  background-color: #000;
+			  top: 65px;
+			  left: -50%;
+			  right: -50%;
+			  z-index: -999;
+			}
+
+			.workwithus{
+				position: absolute;
+				width: 1070px;
+				font-family: 'Playfair Display';
+				font-style: italic;
+				font-weight: 400;
+				font-size: 230px;
+				line-height: 66.5%;
+				text-align: center;
+				letter-spacing: -0.05em;
+				color: #000;
+				top: -600px;
+  				left: 300%;
+  				transform: translate(-50%, -50%);
+  				color: #FFF;
+  				text-shadow: 0px 25px 25px #FFF, 0px 39px 140px #000, 0px 71px 46px #E8D0B4;
+			}
+
+			.banner{
+  			 	text-align: center;
+  			  	display: block;
+  			  	position: absolute;
+			}
+
+			.textwwu{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				padding: 0px 20px;
+				position: relative;
+				width: 200px;
+				height: 56px;
+				left: 250%;
+				top: -250px;
+				background: #FFF;
+				border: 1px solid #000;
+				border-radius: 7px;
+				margin: 0px;
+			}
+
+
+		</style>
+</head>
+<body>
+	<header>
+<!-- logo -->
+			<div class="logobox">
+				<a href="/" > <img src= "logo.png" class="logo" /> </a>
+			</div>
+
+<!-- navigation bar -->
+			<div class="navbarbox">
+				<a href="women3.php" class="navbar" >Women</a>
+	 			<a href="men3.php" class="navbar" >Men</a>
+	 			<a href="kids3.php" class="navbar" >Kids</a>
+			</div>
+
+<!-- shopping cart profile page -->
+			<div class="profile">
+				<a href="#"><img src="icon.png" class="shopping"></a>
+				<a href="#"><img src="profile.png" class="profilep"></a>
+			</div>
+		
+<!-- hamburger navbar -->
+			<div class="hamburger-menu">
+			    <input id="menu__toggle" type="checkbox" />
+			    <label class="menu__btn" for="menu__toggle">
+			      <span></span>
+			    </label>
+
+			    <ul class="menu__box">
+			      <li><a class="menu__item" href="#">BEST SELLERS</a></li>
+			      <ul class="menu__box2">
+				      <li><a class="menu__item2" href="#">Featured</a></li>
+				      <li><a class="menu__item2" href="#">Trending</a></li>
+				      <li><a class="menu__item2" href="#">All-time Best Sellers</a></li>
+			      </ul>
+			      <li><a class="menu__item" href="#">NEW ARRIVALS</a></li>
+			      <ul class="menu__box2">
+				      <li><a class="menu__item2" href="#">Women's New Arrivals</a></li>
+				      <li><a class="menu__item2" href="#">Men's New Arrivals</a></li>
+				      <li><a class="menu__item2" href="#">Kid's New Arrivals</a></li>
+			      </ul>
+			      <li><a class="menu__item" href="#">COLLECTION</a></li>
+			      <ul class="menu__box2">
+				      <li><a class="menu__item2" href="#">Spring collectin '23</a></li>
+				      <li><a class="menu__item2" href="#">Crewmate Series</a></li>
+				      <li><a class="menu__item2" href="#">Imposter Collection</a></li>
+				      <li><a class="menu__item2" href="#">Something Edition</a></li>
+			      </ul>
+			      <li><a class="menu__item" href="#">CATALOGUES</a></li>
+			      <ul class="menu__box2">
+				      <li><a class="menu__item2" href="#">Women's</a></li>
+				      <li><a class="menu__item2" href="#">Men's</a></li>
+				      <li><a class="menu__item2" href="#">Kid's</a></li>
+				      <li><a class="menu__item2" href="#">Unisex</a></li>
+			      </ul>
+			      <li><a class="menu__item" href="#">CATEGORIES</a></li>
+			         <ul class="menu__box2">
+				      <li><a class="menu__item2" href="#">Shirts</a></li>
+				      <li><a class="menu__item2" href="#">T-shirts</a></li>
+				      <li><a class="menu__item2" href="#">Trousers</a></li>
+				      <li><a class="menu__item2" href="#">Dresses</a></li>
+				      <li><a class="menu__item2" href="#">Accessoires</a></li>
+				      <li><a class="menu__item2" href="#">Shoes</a></li>
+				      <li><a class="menu__item2" href="#">Formalwear</a></li>
+			      </ul>
+				    <div class="lowerbox">
+						<div class="cloethingeducationtext">Cloething Education</div>
+					</div>
+				    <div class="lowerbox">
+						<div class="cloethingeducationtext">Donate</div>
+					</div>
+			    </ul>
+			</div>
+		</header>
+
+<!-- line text line -->
+		<div>
+			<hr style="width: 40%; float: left; margin-top: 50px;">
+			<p class="aboutus">About us</p>
+			<br/><br/>
+			<p class="mission"> Our mission </p>
+			<hr style="width: 40%; float: right; margin-top: 13px;">
+		</div>
+
+<!-- banner -->
+		<img src="Banner3.jpeg" style="width: 100%; display: block;" />
+		
+<!-- vision text -->
+		<br/>
+		<p class="vision">Our Vision</p>
+		<p class="visiontext">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dignissim cras tincidunt lobortis feugiat. Eu tincidunt tortor aliquam nulla. Egestas diam in arcu cursus euismod quis viverra nibh cras. Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Pretium viverra suspendisse potenti nullam ac. Nibh mauris cursus mattis molestie a. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Eget arcu dictum varius duis at consectetur lorem donec massa. Tellus at urna condimentum mattis pellentesque id nibh. Commodo ullamcorper a lacus vestibulum sed. Amet tellus cras adipiscing enim eu turpis egestas pretium aenean. In hendrerit gravida rutrum quisque non tellus. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus.
+		</p>
+		<br/>	
+		<p class="vision">Our Mission</p>
+		<p class="visiontext">
+			Arcu non odio euismod lacinia at quis risus. Eget dolor morbi non arcu. Dignissim enim sit amet venenatis urna. Tempus quam pellentesque nec nam aliquam sem et tortor. Tristique sollicitudin nibh sit amet commodo nulla facilisi. Vitae suscipit tellus mauris a diam maecenas sed enim. Duis at tellus at urna. Tristique senectus et netus et malesuada fames ac. Enim eu turpis egestas pretium. Non pulvinar neque laoreet suspendisse interdum consectetur. Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Velit laoreet id donec ultrices tincidunt arcu non sodales. Nec ullamcorper sit amet risus. Sit amet consectetur adipiscing elit pellentesque. Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed. Quis hendrerit dolor magna eget. Feugiat in fermentum posuere urna. Tincidunt dui ut ornare lectus. Arcu bibendum at varius vel pharetra vel turpis. Enim praesent elementum facilisis leo.
+		</p>
+
+<!-- timeline -->
+		<div class="timelinebox">
+		  <ul class="timeline">
+		    <li>Founded</li>
+		    <li>Something</li>
+		    <li>Something</li>
+		    <li>Something</li>
+		  </ul>
+		</div>
+
+<!-- banner -->
+		<img src="Banner4.jpeg" style="width: 100%; display: block;">
+
+<!-- work with us -->	
+		<div class="banner">
+			<p class="workwithus">
+				Work with us
+			</p>	
+			<div class="textwwu">
+				<a href="#" style="text-align: center; text-decoration: none; font-family: raleway, sans-serif; color: #000;">work@cg.com</a>
+			</div>
+		</div>
+		
+
+<!-- footer -->
+		<footer class="footer">
+			<p class="fcopy"> &#169 Cloething Inc. 2023 </p>
+			<img src="logo2.png" class="logo2"/>
+			<ul class="flist">
+				 <li><a class="flist2" href="about.html">About us</a></li>
+				 <li><a class="flist2" href="#">Contact us</a></li>
+				 <li><a class="flist2" href="#">FAQ</a></li>
+				 <li><a class="flist2" href="shipping.html">Shipping &amp Return Policies</a></li>
+			</ul>
+		</footer>
+
+
+</body>
+</html>
